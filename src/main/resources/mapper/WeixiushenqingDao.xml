@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.WeixiushenqingDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.WeixiushenqingEntity" id="weixiushenqingMap">
+        <result property="weixiubianhao" column="weixiubianhao"/>
+        <result property="wupinmingcheng" column="wupinmingcheng"/>
+        <result property="weixiufenlei" column="weixiufenlei"/>
+        <result property="shangchuantupian" column="shangchuantupian"/>
+        <result property="weixiuneirong" column="weixiuneirong"/>
+        <result property="shifouyouxian" column="shifouyouxian"/>
+        <result property="yaoqiubeizhu" column="yaoqiubeizhu"/>
+        <result property="fangjianhao" column="fangjianhao"/>
+        <result property="fangjianleixing" column="fangjianleixing"/>
+        <result property="fangjianmingcheng" column="fangjianmingcheng"/>
+        <result property="fangjianweizhi" column="fangjianweizhi"/>
+        <result property="zhuhuzhanghao" column="zhuhuzhanghao"/>
+        <result property="zhuhuxingming" column="zhuhuxingming"/>
+        <result property="shoujihaoma" column="shoujihaoma"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.WeixiushenqingVO" >
+		SELECT * FROM weixiushenqing  weixiushenqing         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.WeixiushenqingVO" >
+		SELECT  weixiushenqing.* FROM weixiushenqing  weixiushenqing 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.WeixiushenqingView" >
+
+		SELECT  weixiushenqing.* FROM weixiushenqing  weixiushenqing 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.WeixiushenqingView" >
+		SELECT * FROM weixiushenqing  weixiushenqing <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
